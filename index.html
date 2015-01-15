@@ -1,0 +1,149 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<title>EAG Motto-Lotto | Karneval | Jetzt online Motto ziehen</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=2.0">
+
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" type="text/css"
+    media="screen" />
+  <link rel="stylesheet" href="css/style.css" type="text/css" media="screen" />
+
+  <script type="text/javascript" src="//code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script type="text/javascript" src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="src/jquery.slotmachine.js"></script>
+</head>
+
+<body>
+  <div id="header" class="container">
+    <!-- 		<h1 class="content">EAG Motto-Lotto</h1> -->
+    <div class="content">
+      <div id="textMachineYear">
+        <div>2016:</div>
+        <div>2017:</div>
+        <div>2018:</div>
+        <div>2019:</div>
+        <div>2020:</div>
+        <div>2021:</div>
+        <div>2022:</div>
+        <div>2023:</div>
+        <div>2024:</div>
+        <div>2025:</div>
+        <div>2026:</div>
+        <div>2027:</div>
+        <div>2028:</div>
+        <div>2029:</div>
+        <div>2030:</div>
+        <div>2031:</div>
+        <div>2032:</div>
+        <div>2033:</div>
+        <div>2034:</div>
+        <div>2035:</div>
+        <div>2036:</div>
+        <div>2037:</div>
+        <div>2038:</div>
+        <div>2039:</div>
+        <div>2040:</div>
+        <div>2041:</div>
+        <div>2042:</div>
+        <div>2043:</div>
+        <div>2044:</div>
+        <div>2045:</div>
+      </div>
+    </div>
+    <div class="content">
+      <div id="textMachine1">
+        <div>Hüüt</div>
+        <div>Zont</div>
+        <div>Morn</div>
+        <div>Diss Joar</div>
+        <div>Doe</div>
+        <div>Drömm</div>
+        <div>Schue</div>
+        <!-- 				<div>Ons</div> -->
+      </div>
+    </div>
+    <div class="content">
+      <div id="textMachine2">
+        <div>bliewe me</div>
+        <div>semme</div>
+        <div>waerds</div>
+        <div>is</div>
+        <div>kömmts</div>
+        <div>könne me</div>
+        <div>gäets</div>
+        <!-- 				<div>gits</div> -->
+      </div>
+    </div>
+    <div class="content">
+      <div id="textMachine3">
+        <div>guat</div>
+        <div>lustich</div>
+        <div>bointich</div>
+        <div>luut</div>
+        <div>knöppeldeck</div>
+        <div>uffgerühmt</div>
+        <div>widder</div>
+        <div>net</div>
+      </div>
+    </div>
+    <div class="content text-center">
+      <div style="font-size: 25px" class="slotMachineButton" id="slotMachineButtonShuffle">Lues gäets</div>
+      <div style="font-size: 25px" class="slotMachineButton" id="slotMachineButtonStop">Stop</div>
+    </div>
+    <script>
+  		$(document).ready(function() {
+  			var machineYear = $("#textMachineYear").slotMachine({
+  				active: 0,
+  				delay: 500
+  			});
+  
+  			var machine1 = $("#textMachine1").slotMachine({
+  				active: 1,
+  				delay: 500
+  			});
+  
+  			var machine2 = $("#textMachine2").slotMachine({
+  				active: 2,
+  				delay: 500,
+  			});
+  
+  			var machine3 = $("#textMachine3").slotMachine({
+  				active: 3,
+  				delay: 500,
+  			});
+  
+  			var started = 0;
+  
+  			$("#slotMachineButtonShuffle").click(function() {
+  				started = 4;
+  				machineYear.shuffle();
+  				machine1.shuffle();
+  				machine2.shuffle();
+  				machine3.shuffle();
+  			});
+  
+  			$("#slotMachineButtonStop").click(function() {
+  				switch (started) {
+  				case 4:
+  					machineYear.stop();
+  					break;
+  				case 3:
+  					machine1.stop();
+  					break;
+  				case 2:
+  					machine2.stop();
+  					break;
+  				case 1:
+  					machine3.stop();
+  					break;
+  				}
+  				started--;
+  			});
+  		});
+	  </script>
+  </div>
+</body>
+</html>
