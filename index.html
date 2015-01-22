@@ -102,23 +102,20 @@
   
   			var machine1 = $("#textMachine1").slotMachine({
   				active: 1,
-  				delay: 500
+  				delay: 800
   			});
   
   			var machine2 = $("#textMachine2").slotMachine({
   				active: 2,
-  				delay: 500,
+  				delay: 1000,
   			});
   
   			var machine3 = $("#textMachine3").slotMachine({
   				active: 3,
-  				delay: 500,
+  				delay: 1100,
   			});
   
-  			var started = 0;
-  
   			$("#slotMachineButtonShuffle").click(function() {
-  				started = 4;
   				machineYear.shuffle();
   				machine1.shuffle();
   				machine2.shuffle();
@@ -126,21 +123,10 @@
   			});
   
   			$("#slotMachineButtonStop").click(function() {
-  				switch (started) {
-  				case 4:
-  					machineYear.stop();
-  					break;
-  				case 3:
-  					machine1.stop();
-  					break;
-  				case 2:
-  					machine2.stop();
-  					break;
-  				case 1:
-  					machine3.stop();
-  					break;
-  				}
-  				started--;
+  				machineYear.stop();
+  				machine1.stop();
+  				machine2.stop();
+  				machine3.stop();
   			});
   		});
 	  </script>
