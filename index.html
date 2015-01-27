@@ -100,6 +100,7 @@
     <div class="content text-center">
       <div style="font-size: 25px" class="slotMachineButton" id="slotMachineButtonShuffle">Lues gäets</div>
       <div style="font-size: 25px" class="slotMachineButton" id="slotMachineButtonStop">Haalt ooh</div>
+      <a id="resultLink" href="" target="_blank" style="font-size: 12px; display: none">Ergebnis in neuem Tab öffnen</a>
     </div>
     <script>
     	function getUrlParameter(sParam) {
@@ -113,19 +114,26 @@
     		}
     	}
     
-    	var p_year = getUrlParameter('year');
+    	var p_year = getUrlParameter("year");
     	var active_year = p_year ? p_year : 0;
     	
-    	var p_slot1 = getUrlParameter('slot1');
+    	var p_slot1 = getUrlParameter("slot1");
     	var active_slot1 = p_slot1 ? p_slot1 : 1;
     	
-    	var p_slot2 = getUrlParameter('slot2');
+    	var p_slot2 = getUrlParameter("slot2");
     	var active_slot2 = p_slot2 ? p_slot2 : 2;
     	
-    	var p_slot3 = getUrlParameter('slot3');
+    	var p_slot3 = getUrlParameter("slot3");
     	var active_slot3 = p_slot3 ? p_slot3 : 3;
+    	
+    	var p_fullstuff = getUrlParameter("fullstuff");
     
   		$(document).ready(function() {
+  			if (p_fullstuff) {
+  				$("#resultLink").show();
+  			}
+  			
+  		
   			var machineYear = $("#textMachineYear").slotMachine({
   				active: active_year,
   				delay: 500
@@ -158,6 +166,19 @@
   				machine1.stop();
   				machine2.stop();
   				machine3.stop();
+  				
+  				console.log("year: " + machineYear.active);
+  				console.log("machine1: " + machine1.active);
+  				console.log("machine2: " + machine2.active);
+  				console.log("machine3: " + machine3.active);
+  				
+  				console.log(window.location.origin);
+  				console.log(window.location.pathname);
+  				
+  				var baseUrl = window.location.origin + window.location.pathname;
+  				var params = "?year=" + machineYear.active + "&slot1=" + machine1.active + "&slot2=" + machine2.active + "&slot3=" + machine3.active;
+  				
+  				$("#resultLink").attr("href", baseUrl + params);
   			});
   		});
 	  </script>
