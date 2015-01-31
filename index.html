@@ -100,7 +100,7 @@
     <div class="content text-center">
       <div style="font-size: 25px" class="slotMachineButton" id="slotMachineButtonShuffle">Lues gäets</div>
       <div style="font-size: 25px" class="slotMachineButton" id="slotMachineButtonStop">Haalt ooh</div>
-      <a id="resultLink" href="" target="_blank" style="font-size: 14px; display: none">In neuem Tab öffnen</a>
+      <a id="resultLink" href="" style="font-size: 14px; display: none">Link generieren..</a>
     </div>
     <script>
     	function getUrlParameter(sParam) {
@@ -173,7 +173,11 @@
   				
   				// console.log(window.location.origin);
   				// console.log(window.location.pathname);
-  				
+  			});
+  			
+  			$("#resultLink").click(function() {
+  				alert("Der Motto-Link wurde aktualisiert und kann jetzt geteilt werden");
+  			
   				var baseUrl = window.location.origin + window.location.pathname;
   				var params = "?fullstuff=1" + "&year=" + machineYear.active + "&slot1=" + machine1.active + "&slot2=" + machine2.active + "&slot3=" + machine3.active;
   				
