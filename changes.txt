@@ -11,3 +11,6 @@ Release 0.11.3 (25/01/15):
 
 Release 0.11.4 (31/01/15):
 - update to jQuery slot machine 2.0.8 (fixes SVG issue)
+
+Release 0.11.5 (31/01/15):
+- added power user deep link
