@@ -100,7 +100,7 @@
     <div class="content text-center">
       <div style="font-size: 25px" class="slotMachineButton" id="slotMachineButtonShuffle">Lues gäets</div>
       <div style="font-size: 25px" class="slotMachineButton" id="slotMachineButtonStop">Haalt ooh</div>
-      <a id="resultLink" href="" target="_blank" style="font-size: 12px; display: none">Ergebnis in neuem Tab öffnen</a>
+      <a id="resultLink" href="" target="_blank" style="font-size: 14px; display: none">In neuem Tab öffnen</a>
     </div>
     <script>
     	function getUrlParameter(sParam) {
@@ -133,7 +133,6 @@
   				$("#resultLink").show();
   			}
   			
-  		
   			var machineYear = $("#textMachineYear").slotMachine({
   				active: active_year,
   				delay: 500
@@ -167,16 +166,16 @@
   				machine2.stop();
   				machine3.stop();
   				
-  				console.log("year: " + machineYear.active);
-  				console.log("machine1: " + machine1.active);
-  				console.log("machine2: " + machine2.active);
-  				console.log("machine3: " + machine3.active);
+  				// console.log("year: " + machineYear.active);
+  				// console.log("machine1: " + machine1.active);
+  				// console.log("machine2: " + machine2.active);
+  				// console.log("machine3: " + machine3.active);
   				
-  				console.log(window.location.origin);
-  				console.log(window.location.pathname);
+  				// console.log(window.location.origin);
+  				// console.log(window.location.pathname);
   				
   				var baseUrl = window.location.origin + window.location.pathname;
-  				var params = "?year=" + machineYear.active + "&slot1=" + machine1.active + "&slot2=" + machine2.active + "&slot3=" + machine3.active;
+  				var params = "?fullstuff=1" + "&year=" + machineYear.active + "&slot1=" + machine1.active + "&slot2=" + machine2.active + "&slot3=" + machine3.active;
   				
   				$("#resultLink").attr("href", baseUrl + params);
   			});
