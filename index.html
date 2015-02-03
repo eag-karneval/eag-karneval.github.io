@@ -187,6 +187,11 @@
   			
   			$("#infoButton").click(function() {
   				alert("Halts Mull un pfüff!");
+  				
+  				var baseUrl = window.location.origin + window.location.pathname;
+  				var params = "?year=" + machineYear.active + "&slot1=" + machine1.active + "&slot2=" + machine2.active + "&slot3=" + machine3.active;
+  				
+  				$("#resultLink").attr("href", baseUrl + params);
   			});
   		});
 	  </script>
