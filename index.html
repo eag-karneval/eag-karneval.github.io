@@ -99,9 +99,16 @@
     </div>
     <div class="content text-center">
       <div style="font-size: 25px" class="slotMachineButton" id="slotMachineButtonShuffle">Lues gäets</div>
-      <div style="font-size: 25px" class="slotMachineButton" id="slotMachineButtonStop">Haalt ooh</div>
-      <a id="resultLink" href="" style="font-size: 14px; display: none">Link generieren..</a>
+      <div style="font-size: 25px" class="slotMachineButton" id="slotMachineButtonStop">Haalt ooh</div>  
     </div>
+    <div>
+	  <a id="resultLink" href="" class="btn btn-default" role="button">
+	    <span class="glyphicon glyphicon-refresh" aria-hidden="true"></span> Link akt.
+	  </a>
+	  <a id="infoButton" href="" class="btn btn-default" role="button">
+	    <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span> Info
+	  </a>
+	</div>
     <script>
     	function getUrlParameter(sParam) {
     		var sPageURL = window.location.search.substring(1);
@@ -126,13 +133,7 @@
     	var p_slot3 = getUrlParameter("slot3");
     	var active_slot3 = p_slot3 ? p_slot3 : 3;
     	
-    	var p_fullstuff = getUrlParameter("fullstuff");
-    
   		$(document).ready(function() {
-  			if (p_fullstuff) {
-  				$("#resultLink").show();
-  			}
-  			
   			var machineYear = $("#textMachineYear").slotMachine({
   				active: active_year,
   				delay: 500
@@ -179,9 +180,13 @@
   				alert("Der Motto-Link wurde aktualisiert und kann jetzt geteilt werden");
   			
   				var baseUrl = window.location.origin + window.location.pathname;
-  				var params = "?fullstuff=1" + "&year=" + machineYear.active + "&slot1=" + machine1.active + "&slot2=" + machine2.active + "&slot3=" + machine3.active;
+  				var params = "?year=" + machineYear.active + "&slot1=" + machine1.active + "&slot2=" + machine2.active + "&slot3=" + machine3.active;
   				
   				$("#resultLink").attr("href", baseUrl + params);
+  			});
+  			
+  			$("#infoButton").click(function() {
+  				alert("Halts Mull un pfüff!");
   			});
   		});
 	  </script>
