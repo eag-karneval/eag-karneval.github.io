@@ -119,6 +119,20 @@
     			}
     		}
     	}
+    	
+    	function getBaseUrl() {
+    		var baseUrl;
+    		
+    		// IE does not support window.location.origin
+    		if (!window.location.origin) {
+    			baseUrl = window.location.protocol + "//" + window.location.hostname;
+    		}
+    		else {
+    			baseUrl = window.location.origin + window.location.pathname;
+    		}
+    		
+			return baseUrl;
+    	}
     
     	var p_year = getUrlParameter("year");
     	var active_year = p_year ? p_year : 0;
@@ -178,12 +192,7 @@
   			$("#resultLink").click(function() {
   				alert("Der Motto-Link wurde aktualisiert und kann jetzt geteilt werden");
   			
-  				// var baseUrl = window.location.origin + window.location.pathname;
-  				var baseUrl = window.location.origin;
-  				if (!baseUrl) {
-  					baseUrl = window.location.protocol + "//" + window.location.hostname;
-				}
-  				
+  				var baseUrl = getBaseUrl();
   				var params = "?year=" + machineYear.active + "&slot1=" + machine1.active + "&slot2=" + machine2.active + "&slot3=" + machine3.active;
   				
   				$("#resultLink").attr("href", baseUrl + params);
@@ -192,12 +201,7 @@
   			$("#infoButton").click(function() {
   				alert("Halts Mull un pfüff!");
   				
-  				// var baseUrl = window.location.origin + window.location.pathname;
-  				var baseUrl = window.location.origin;
-  				if (!baseUrl) {
-  					baseUrl = window.location.protocol + "//" + window.location.hostname;
-				}
-  				
+  				var baseUrl = getBaseUrl();
   				var params = "?year=" + machineYear.active + "&slot1=" + machine1.active + "&slot2=" + machine2.active + "&slot3=" + machine3.active;
   				
   				$("#infoButton").attr("href", baseUrl + params);
