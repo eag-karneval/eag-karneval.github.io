@@ -18,9 +18,16 @@
 </head>
 
 <body>
+  <div style="padding-top:50px;" class="line">
+    <div style="text-align: center" class="content">
+      <h1>EAG Motto-Lotto</h1>
+      <a href="#year-anchor"><h1 style="padding-bottom: 40px;">Jetzt Motto des Wasunger Karnevals ziehen!</h1></a>
+      <a href="#year-anchor" class="arrow-down"></a>
+    </div>
+  </div>
   <div id="header" class="container">
-    <!-- 		<h1 class="content">EAG Motto-Lotto</h1> -->
     <div class="content">
+      <a name="year-anchor"></a>
       <div id="textMachineYear">
         <div>2016:</div>
         <div>2017:</div>
@@ -325,7 +332,7 @@
   				alert("Der Motto-Link wurde aktualisiert und kann jetzt geteilt werden");
   			
   				var baseUrl = getBaseUrl();
-  				var params = "?year=" + machineYear.active + "&slot1=" + machine1.active + "&slot2=" + machine2.active + "&slot3=" + machine3.active;
+  				var params = "?year=" + machineYear.active + "&slot1=" + machine1.active + "&slot2=" + machine2.active + "&slot3=" + machine3.active + "#year-anchor";
   				
   				$("#resultLink").attr("href", baseUrl + params);
   			});
@@ -334,7 +341,7 @@
   				alert("Halts Mull un pfüff!");
   				
   				var baseUrl = getBaseUrl();
-  				var params = "?year=" + machineYear.active + "&slot1=" + machine1.active + "&slot2=" + machine2.active + "&slot3=" + machine3.active;
+  				var params = "?year=" + machineYear.active + "&slot1=" + machine1.active + "&slot2=" + machine2.active + "&slot3=" + machine3.active + "#year-anchor";
   				
   				$("#infoButton").attr("href", baseUrl + params);
   			});

@@ -82,6 +82,21 @@ p.title{
 
 .grey {	color:#444;}
 
+.line {
+  background-color: #dcd293;
+  border-top: 20px #a48e4e;
+  padding: 50px 0 25px;
+  width: 100%;
+}
+
+ .arrow-down {
+   width: 0;
+   height: 0;
+   border-left: 55px solid transparent;
+   border-right: 55px solid transparent;
+   border-top: 55px solid #6C5726;
+ }
+
 /* INICIO
 -------------------------------------------------------------------------*/
 #header{
