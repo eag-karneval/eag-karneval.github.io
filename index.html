@@ -278,6 +278,12 @@
         }
       }
 
+      function getRandomSlotIndex(elementsInSlot, randomValue){
+        var result = randomValue * elementsInSlot;
+        result = Math.round(result) - 1;
+        return result;
+      }
+
       var p_year = getUrlParameter("year");
     	var active_year = p_year ? p_year : 0;
     	
@@ -311,16 +317,12 @@
   				active: active_slot1,
   				delay: 800,
           randomize : function(activeElementIndex){
-            var randomValue = Math.random();
-            var elements_slot1 = 7;
-
-            var result = randomValue * elements_slot1;
-            result = Math.round(result) - 1;
-
+            var elementsSlot1 = 7;
+            var result = getRandomSlotIndex(elementsSlot1, Math.random());
             return result;
           }
   			});
-  
+
   			var machine2 = $("#textMachine2").slotMachine({
   				active: active_slot2,
   				delay: 1100
