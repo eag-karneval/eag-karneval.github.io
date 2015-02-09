@@ -309,7 +309,16 @@
   
   			var machine1 = $("#textMachine1").slotMachine({
   				active: active_slot1,
-  				delay: 800
+  				delay: 800,
+          randomize : function(activeElementIndex){
+            var randomValue = Math.random();
+            var elements_slot1 = 7;
+
+            var result = randomValue * elements_slot1;
+            result = Math.round(result) - 1;
+
+            return result;
+          }
   			});
   
   			var machine2 = $("#textMachine2").slotMachine({
