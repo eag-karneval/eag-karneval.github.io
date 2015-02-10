@@ -151,13 +151,19 @@ p.title{
 	height: 67px;
 	overflow: hidden;
 	display: inline-block;
-	text-align: left;
+	text-align: center;
 }
 #textMachine1 > *, #textMachine2 > *, #textMachine3 > *, #textMachineYear > * {
 	padding: 0px 80px;
 }
 
-.slotMachineButton{
+@media screen and (max-width: 510px) {
+  #textMachine1, #textMachine2, #textMachine3, #textMachineYear {
+    text-align: left;
+  }
+}
+
+.slotMachineButton {
 	width:100px;
 	height: 100px;
 	overflow: hidden;
