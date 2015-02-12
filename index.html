@@ -292,9 +292,18 @@
     	
     	var p_slot2 = getUrlParameter("slot2");
     	var active_slot2 = p_slot2 ? p_slot2 : 10;
-    	
+
     	var p_slot3 = getUrlParameter("slot3");
     	var active_slot3 = p_slot3 ? p_slot3 : 1;
+
+      var p_autoplay = getUrlParameter("autoplay");
+      p_autoplay = p_autoplay ? p_autoplay : "0";
+
+      var p_sound = getUrlParameter("sound");
+      p_sound = p_sound ? p_sound : "1";
+
+      var PLAY_INTERVAL = 13500;
+      var RUN_INTERVAL = 5000;
 
   		$(document).ready(function() {
         var audios = [
@@ -339,18 +348,46 @@
   				machine2.shuffle();
   				machine3.shuffle();
 
-          audios[0].play();
+          if (p_sound === "1") {
+            audios[0].play();
+          }
   			});
-  
+
   			$("#slotMachineButtonStop").click(function() {
   				machineYear.stop();
   				machine1.stop();
   				machine2.stop();
   				machine3.stop();
 
-          audios[2].play();
+          if (p_sound === "1") {
+            audios[2].play();
+          }
   			});
-  			
+
+        if (p_autoplay === "1") {
+          setInterval(function () {
+            machineYear.shuffle();
+            machine1.shuffle();
+            machine2.shuffle();
+            machine3.shuffle();
+
+            if (p_sound === "1") {
+              audios[0].play();
+            }
+
+            setTimeout(function() {
+              machineYear.stop();
+              machine1.stop();
+              machine2.stop();
+              machine3.stop();
+
+              if (p_sound === "1") {
+                audios[2].play();
+              }
+            }, RUN_INTERVAL);
+          }, PLAY_INTERVAL);
+        }
+
   			$("#resultLink").click(function() {
   				alert("Der Motto-Link wurde aktualisiert und kann jetzt geteilt werden");
   			
