@@ -1,417 +1,368 @@
 <!DOCTYPE html>
-<html>
+<html lang="de">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-
-<title>EAG Motto-Lotto | Karneval | Wasungen | Jetzt online Motto ziehen</title>
-
-<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=2.0">
-
-  <link rel="shortcut icon" href="http://www.eag-motto-lotto.de/favicon.ico?v11" />
-  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" type="text/css"
-    media="screen" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>EAG Motto-Lotto</title>
   <link rel="stylesheet" href="css/style.css" type="text/css" media="screen" />
-
-  <script type="text/javascript" src="//code.jquery.com/jquery-2.1.1.min.js"></script>
-  <script type="text/javascript" src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
   <script type="text/javascript" src="src/jquery.slotmachine.js"></script>
 </head>
 
 <body>
-  <div id="header" class="container" style="padding: 0px 0px;">
-    <h1 style="color: #ffffff">EAG Motto-Lotto 2026</h1>
+  <div class="page">
+    <header class="hero">
+      <div>
+        <div class="eyebrow">EAG Motto-Lotto</div>
+        <h1>EAG Motto-Lotto</h1>
+        <p class="subhead">Jetzt Motto für Wasunger Karneval ziehen</p>
+      </div>
+      <div class="status">
+        <span class="status-label">Status</span>
+        <span class="status-pill active">🍺</span>
+        <div class="status-user">
+          <span class="status-name">EAG Wasungen</span>
+          <a class="btn btn-ghost btn-compact" href="#slot-machine">Zum Spiel</a>
+        </div>
+      </div>
+    </header>
+
+    <main class="grid">
+      <section id="slot-machine" class="panel slot-panel">
+        <div class="panel-header">
+          <h2>Motto ziehen</h2>
+          <p>Zieh dir dein Motto im Slot-Style.</p>
+        </div>
+
+        <a id="year-anchor"></a>
+
+        <div class="slot-machine" aria-label="Motto-Lotto">
+          <div id="textMachine1" class="slot-reel">
+            <div><img src="image_01.jpeg" alt="Motto 01" /></div>
+            <div><img src="image_02.jpeg" alt="Motto 02" /></div>
+            <div><img src="image_03.jpeg" alt="Motto 03" /></div>
+            <div><img src="image_04.jpeg" alt="Motto 04" /></div>
+            <div><img src="image_05.jpeg" alt="Motto 05" /></div>
+            <div><img src="image_06.jpeg" alt="Motto 06" /></div>
+            <div><img src="image_07.jpeg" alt="Motto 07" /></div>
+          </div>
+          <div id="textMachine2" class="slot-reel">
+            <div><img src="image_08.jpeg" alt="Motto 08" /></div>
+            <div><img src="image_09.jpeg" alt="Motto 09" /></div>
+            <div><img src="image_10.jpeg" alt="Motto 10" /></div>
+            <div><img src="image_11.jpeg" alt="Motto 11" /></div>
+            <div><img src="image_12.jpeg" alt="Motto 12" /></div>
+            <div><img src="image_13.jpeg" alt="Motto 13" /></div>
+            <div><img src="image_14.jpeg" alt="Motto 14" /></div>
+          </div>
+          <div id="textMachine3" class="slot-reel">
+            <div><img src="image_15.jpeg" alt="Motto 15" /></div>
+            <div><img src="image_16.jpeg" alt="Motto 16" /></div>
+            <div><img src="image_17.jpeg" alt="Motto 17" /></div>
+            <div><img src="image_18.jpeg" alt="Motto 18" /></div>
+            <div><img src="image_19.jpeg" alt="Motto 19" /></div>
+            <div><img src="image_20.jpeg" alt="Motto 20" /></div>
+          </div>
+        </div>
+
+        <div class="slot-actions">
+          <button class="btn btn-primary slotMachineButton" id="slotMachineButtonShuffle" type="button">
+            Lues gäets
+          </button>
+          <button class="btn btn-ghost slotMachineButton" id="slotMachineButtonStop" type="button">
+            Haalt ooh
+          </button>
+        </div>
+
+        <div class="slot-meta">
+          <a id="resultLink" class="btn btn-ghost btn-compact" href="" role="button">Link teilen</a>
+          <a id="infoButton" class="btn btn-ghost btn-compact" href="" role="button">Info</a>
+        </div>
+
+        <p class="hint">Tipp: Mit dem Share-Link kannst du das Ergebnis direkt teilen.</p>
+      </section>
+    </main>
   </div>
-  <div class="line">
-    <div style="text-align: center" class="content">
-      <h1 style="padding-bottom: 40px;">Jetzt Motto für Wasunger Karneval ziehen</h1>
-      <a href="#year-anchor" class="arrow-down"></a>
-    </div>
-  </div>
-  <div id="header" class="container">
-    <div class="content">
-      <a name="year-anchor"></a>
-      <div id="textMachineYear">
-        <div>2024:</div>
-        <div>2025:</div>
-        <div>2026:</div>
-        <div>2027:</div>
-        <div>2028:</div>
-        <div>2029:</div>
-        <div>2030:</div>
-        <div>2031:</div>
-        <div>2032:</div>
-        <div>2033:</div>
-        <div>2034:</div>
-        <div>2035:</div>
-        <div>2036:</div>
-        <div>2037:</div>
-        <div>2038:</div>
-        <div>2039:</div>
-        <div>2040:</div>
-        <div>2041:</div>
-        <div>2042:</div>
-        <div>2043:</div>
-        <div>2044:</div>
-        <div>2045:</div>
-      </div>
-    </div>
-    <div class="content">
-      <div id="textMachine1">
-        <div>Hüüt</div>
-        <div>Zont</div>
-        <div>Morn</div>
-        <div>Diss Joar</div>
-        <div>Doe</div>
-        <div>Drömm</div>
-        <div>Schue</div>
-      </div>
-    </div>
-    <div class="content">
-      <div id="textMachine2">
-        <div>bliewe me</div>
-        <div>senn me</div>
-        <div>wäerd's</div>
-        <div>kömmt's</div>
-        <div>könne me</div>
-        <div>gäet's</div>
-        <div>honne mes</div>
-        <div>zügt's</div>
-        <div>gricht üers</div>
-        <div>lache me</div>
-        <div>schniedr'me</div>
-      </div>
-    </div>
-    <div class="content">
-      <div id="textMachine3">
-        <div>lustich</div>
-        <div>bointich</div>
-        <div>luud</div>
-        <div>knöppeldeck</div>
-        <div>uffgerühmt</div>
-        <div>widder</div>
-        <div>guet</div>
-        <div>net</div>
-        <div>näre</div>
-        <div>uffgerät</div>
-        <div>roind</div>
-        <div>buggelich</div>
-      </div>
-    </div>
-    <div class="content text-center">
-      <div style="font-size: 25px" class="slotMachineButton" id="slotMachineButtonShuffle">Lues gäets</div>
-      <div style="font-size: 25px" class="slotMachineButton" id="slotMachineButtonStop">Haalt ooh</div>  
-    </div>
-    <div>
-	  <a id="resultLink" href="" class="btn btn-default" role="button">
-	    <span class="glyphicon glyphicon-share" aria-hidden="true"></span>
-	  </a>
-	  <a id="infoButton" href="" class="btn btn-default" role="button">
-	    <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span>
-	  </a>
-	</div>
-  <div style="margin-top: 20px;">
-    <div class="a2a_kit a2a_kit_size_32 a2a_default_style" style="margin: 0 auto; width: 180px;">
-      <a class="a2a_button_facebook"></a>
-      <a class="a2a_button_whatsapp"></a>
-      <a class="a2a_button_twitter"></a>
-      <a class="a2a_button_google_plus"></a>
-      <a class="a2a_button_email"></a>
-    </div>
-    <script type="text/javascript" src="//static.addtoany.com/menu/page.js"></script>
-  </div>
-    <script>
-    	function getUrlParameter(sParam) {
-    		var sPageURL = window.location.search.substring(1);
-    		var sURLVariables = sPageURL.split('&');
-    		for (var i = 0; i < sURLVariables.length; i++) {
-    			var sParameterName = sURLVariables[i].split('=');
-    			if (sParameterName[0] == sParam) {
-    				return sParameterName[1];
-    			}
-    		}
-    	}
-    	
-    	function getBaseUrl() {
-    		var baseUrl;
-    		
-    		// IE does not support window.location.origin
-    		if (!window.location.origin) {
-    			baseUrl = window.location.protocol + "//" + window.location.hostname;
-    		}
-    		else {
-    			baseUrl = window.location.origin + window.location.pathname;
-    		}
-    		
-			return baseUrl;
-    	}
 
-      function _initWebAudio(AudioContext, format, audios, callback) {
-        // See more details in http://www.html5rocks.com/en/tutorials/webaudio/intro/
-        var context = new AudioContext();
-
-        function _preload(asset) {
-          var request = new XMLHttpRequest();
-          request.open('GET', 'audio/' + asset.id + '.' + format, true);
-          request.responseType = 'arraybuffer';
-
-          request.onload = function () {
-            context.decodeAudioData(request.response, function (buffer) {
-              asset.play = function () {
-                var source = context.createBufferSource(); // creates a sound source
-                source.buffer = buffer;                    // tell the source which sound to play
-                source.connect(context.destination);       // connect the source to the context's destination (the speakers)
-
-                // play the source now
-                // support both webkitAudioContext or standard AudioContext
-                source.noteOn ? source.noteOn(0) : source.start(0);
-              };
-              // default volume
-              // support both webkitAudioContext or standard AudioContext
-              asset.gain = context.createGain ? context.createGain() : context.createGainNode();
-              asset.gain.connect(context.destination);
-              asset.gain.gain.value = 0.5;
-
-              _check();
-            }, function (err) {
-              asset.play = function () {
-              };
-              _check(err, asset.id);
-            });
-          };
-          request.onerror = function (err) {
-            asset.play = function () {
-            };
-            _check(err, asset.id);
-          };
-          // kick off load
-          request.send();
+  <script>
+    function getUrlParameter(sParam) {
+      var sPageURL = window.location.search.substring(1);
+      var sURLVariables = sPageURL.split('&');
+      for (var i = 0; i < sURLVariables.length; i++) {
+        var sParameterName = sURLVariables[i].split('=');
+        if (sParameterName[0] == sParam) {
+          return sParameterName[1];
         }
+      }
+    }
 
-        var loadc = 0;
-        function _check(err, id) {
-          if (err) {
-            alert('Failed to load ' + id + '.' + format);
-          }
-          loadc++;
-          if (audios.length == loadc) callback();
-        }
+    function getBaseUrl() {
+      var baseUrl;
 
-        audios.forEach(function (asset) {
-          _preload(asset);
-        });
+      // IE does not support window.location.origin
+      if (!window.location.origin) {
+        baseUrl = window.location.protocol + "//" + window.location.hostname;
+      }
+      else {
+        baseUrl = window.location.origin + window.location.pathname;
       }
 
-      function _initHTML5Audio(format, audios, callback) {
-        function _preload(asset) {
-          asset.audio = new Audio('audio/' + asset.id + '.' + format);
-          asset.audio.preload = 'auto';
-          asset.audio.addEventListener("loadeddata", function () {
-            // Loaded ok, set play function in object and set default volume
+      return baseUrl;
+    }
+
+    function _initWebAudio(AudioContext, format, audios, callback) {
+      // See more details in http://www.html5rocks.com/en/tutorials/webaudio/intro/
+      var context = new AudioContext();
+
+      function _preload(asset) {
+        var request = new XMLHttpRequest();
+        request.open('GET', 'audio/' + asset.id + '.' + format, true);
+        request.responseType = 'arraybuffer';
+
+        request.onload = function () {
+          context.decodeAudioData(request.response, function (buffer) {
             asset.play = function () {
-              asset.audio.play();
+              var source = context.createBufferSource(); // creates a sound source
+              source.buffer = buffer;                    // tell the source which sound to play
+              source.connect(context.destination);       // connect the source to the context's destination (the speakers)
+
+              // play the source now
+              // support both webkitAudioContext or standard AudioContext
+              source.noteOn ? source.noteOn(0) : source.start(0);
             };
-            asset.audio.volume = 0.6;
+            // default volume
+            // support both webkitAudioContext or standard AudioContext
+            asset.gain = context.createGain ? context.createGain() : context.createGainNode();
+            asset.gain.connect(context.destination);
+            asset.gain.gain.value = 0.5;
 
             _check();
-          }, false);
-
-          asset.audio.addEventListener("error", function (err) {
-            // Failed to load, set dummy play function
+          }, function (err) {
             asset.play = function () {
-            }; // dummy
-
+            };
             _check(err, asset.id);
-          }, false);
-        }
-
-        var loadc = 0;
-        function _check(err, id) {
-          if (err) {
-            alert('Failed to load ' + id + '.' + format);
-          }
-          loadc++;
-          if (audios.length == loadc) callback();
-        }
-
-        audios.forEach(function (asset) {
-          _preload(asset);
-        });
-      }
-
-      // Initializes audio and loads audio files
-      function initAudio(audios, callback) {
-        var format = 'mp3';
-        var elem = document.createElement('audio');
-        if (elem) {
-          // Check if we can play mp3, if not then fall back to ogg
-          if (!elem.canPlayType('audio/mpeg;') && elem.canPlayType('audio/ogg;')) format = 'ogg';
-        }
-
-        var AudioContext = window.webkitAudioContext || window.mozAudioContext || window.MSAudioContext || window.AudioContext;
-
-        if (AudioContext) {
-          console.log('WebAudio Supported');
-          // Browser supports webaudio
-          // https://dvcs.w3.org/hg/audio/raw-file/tip/webaudio/specification.html
-          return _initWebAudio(AudioContext, format, audios, callback);
-        } else if (elem) {
-          console.log('HTML5 Audio Supported');
-          // HTML5 Audio
-          // http://www.whatwg.org/specs/web-apps/current-work/multipage/the-video-element.html#the-audio-element
-          return _initHTML5Audio(format, audios, callback);
-        } else {
-          console.log('Audio NOT Supported');
-          // audio not supported
-          audios.forEach(function (item) {
-            item.play = function () {
-            }; // dummy play
           });
-          callback();
+        };
+        request.onerror = function (err) {
+          asset.play = function () {
+          };
+          _check(err, asset.id);
+        };
+        // kick off load
+        request.send();
+      }
+
+      var loadc = 0;
+      function _check(err, id) {
+        if (err) {
+          alert('Failed to load ' + id + '.' + format);
         }
+        loadc++;
+        if (audios.length == loadc) callback();
       }
 
-      function getRandomSlotIndex(elementsInSlot, randomValue){
-        var result = randomValue * elementsInSlot;
-        result = Math.round(result) - 1;
-        return result;
+      audios.forEach(function (asset) {
+        _preload(asset);
+      });
+    }
+
+    function _initHTML5Audio(format, audios, callback) {
+      function _preload(asset) {
+        asset.audio = new Audio('audio/' + asset.id + '.' + format);
+        asset.audio.preload = 'auto';
+        asset.audio.addEventListener("loadeddata", function () {
+          // Loaded ok, set play function in object and set default volume
+          asset.play = function () {
+            asset.audio.play();
+          };
+          asset.audio.volume = 0.6;
+
+          _check();
+        }, false);
+
+        asset.audio.addEventListener("error", function (err) {
+          // Failed to load, set dummy play function
+          asset.play = function () {
+          }; // dummy
+
+          _check(err, asset.id);
+        }, false);
       }
 
-      var p_year = getUrlParameter("year");
-    	var active_year = p_year ? p_year : 0;
-    	
-    	var p_slot1 = getUrlParameter("slot1");
-    	var active_slot1 = p_slot1 ? p_slot1 : 1;
-    	
-    	var p_slot2 = getUrlParameter("slot2");
-    	var active_slot2 = p_slot2 ? p_slot2 : 10;
+      var loadc = 0;
+      function _check(err, id) {
+        if (err) {
+          alert('Failed to load ' + id + '.' + format);
+        }
+        loadc++;
+        if (audios.length == loadc) callback();
+      }
 
-    	var p_slot3 = getUrlParameter("slot3");
-    	var active_slot3 = p_slot3 ? p_slot3 : 1;
+      audios.forEach(function (asset) {
+        _preload(asset);
+      });
+    }
 
-      var p_autoplay = getUrlParameter("autoplay");
-      p_autoplay = p_autoplay ? p_autoplay : "0";
+    function initAudio(audios, callback) {
+      if (window.AudioContext || window.webkitAudioContext) {
+        // WebAudio API supported, create audio context
+        var AudioContext = window.AudioContext ? window.AudioContext : window.webkitAudioContext;
 
-      var p_sound = getUrlParameter("sound");
-      p_sound = p_sound ? p_sound : "1";
-
-      var PLAY_INTERVAL = 13500;
-      var RUN_INTERVAL = 5000;
-
-  		$(document).ready(function() {
-        var audios = [
-          {id: 'roll'}, // Played on roll tart
-          {id: 'slot'}, // Played when reel stops
-          {id: 'win'},  // Played on win
-          {id: 'nowin'}  // Played on loss
-        ];
-
-        initAudio(audios, function () {
-          // currently nothing to do
+        // init web audio
+        // http://updates.html5rocks.com/2012/12/HTML5-audio-and-the-Web-Audio-API-are-BFFs
+        return _initWebAudio(AudioContext, 'mp3', audios, callback);
+      } else if (typeof Audio !== 'undefined') {
+        // HTML5 audio supported
+        // http://www.whatwg.org/specs/web-apps/current-work/multipage/the-video-element.html#the-audio-element
+        return _initHTML5Audio('mp3', audios, callback);
+      } else {
+        console.log('Audio NOT Supported');
+        // audio not supported
+        audios.forEach(function (item) {
+          item.play = function () {
+          }; // dummy play
         });
+        callback();
+      }
+    }
 
-  			var machineYear = $("#textMachineYear").slotMachine({
-  				active: active_year,
-  				delay: 500
-  			});
-  
-  			var machine1 = $("#textMachine1").slotMachine({
-  				active: active_slot1,
-  				delay: 800,
-          randomize : function(activeElementIndex){
-            var elementsSlot1 = 7;
-            var result = getRandomSlotIndex(elementsSlot1, Math.random());
-            return result;
-          }
-  			});
+    function getRandomSlotIndex(elementsInSlot, randomValue) {
+      var result = randomValue * elementsInSlot;
+      result = Math.round(result) - 1;
+      return result;
+    }
 
-  			var machine2 = $("#textMachine2").slotMachine({
-  				active: active_slot2,
-  				delay: 1100
-  			});
-  
-  			var machine3 = $("#textMachine3").slotMachine({
-  				active: active_slot3,
-  				delay: 1400
-  			});
-  
-  			$("#slotMachineButtonShuffle").click(function() {
-  				machineYear.shuffle();
-  				machine1.shuffle();
-  				machine2.shuffle();
-  				machine3.shuffle();
+    var p_slot1 = getUrlParameter("slot1");
+    var active_slot1 = p_slot1 ? p_slot1 : 1;
+
+    var p_slot2 = getUrlParameter("slot2");
+      var active_slot2 = p_slot2 ? p_slot2 : 1;
+
+    var p_slot3 = getUrlParameter("slot3");
+    var active_slot3 = p_slot3 ? p_slot3 : 1;
+
+    var p_autoplay = getUrlParameter("autoplay");
+    p_autoplay = p_autoplay ? p_autoplay : "0";
+
+    var p_sound = getUrlParameter("sound");
+    p_sound = p_sound ? p_sound : "1";
+
+    var PLAY_INTERVAL = 13500;
+    var RUN_INTERVAL = 5000;
+
+    $(window).on('load', function () {
+      var audios = [
+        { id: 'roll' }, // Played on roll tart
+        { id: 'slot' }, // Played when reel stops
+        { id: 'win' },  // Played on win
+        { id: 'nowin' }  // Played on loss
+      ];
+
+      initAudio(audios, function () {
+        // currently nothing to do
+      });
+
+      var machine1 = $("#textMachine1").slotMachine({
+        active: active_slot1,
+        delay: 800,
+        randomize: function (activeElementIndex) {
+          var elementsSlot1 = $("#textMachine1").children().length;
+          var result = getRandomSlotIndex(elementsSlot1, Math.random());
+          return result;
+        }
+      });
+
+      var machine2 = $("#textMachine2").slotMachine({
+        active: active_slot2,
+        delay: 1100,
+        randomize: function (activeElementIndex) {
+          var elementsSlot2 = $("#textMachine2").children().length;
+          var result = getRandomSlotIndex(elementsSlot2, Math.random());
+          return result;
+        }
+      });
+
+      var machine3 = $("#textMachine3").slotMachine({
+        active: active_slot3,
+        delay: 1400,
+        randomize: function (activeElementIndex) {
+          var elementsSlot3 = $("#textMachine3").children().length;
+          var result = getRandomSlotIndex(elementsSlot3, Math.random());
+          return result;
+        }
+      });
+
+      $("#slotMachineButtonShuffle").click(function () {
+        machine1.shuffle();
+        machine2.shuffle();
+        machine3.shuffle();
+
+        if (p_sound === "1") {
+          audios[0].play();
+        }
+      });
+
+      $("#slotMachineButtonStop").click(function () {
+        machine1.stop();
+        machine2.stop();
+        machine3.stop();
+
+        if (p_sound === "1") {
+          audios[2].play();
+        }
+      });
+
+      if (p_autoplay === "1") {
+        setInterval(function () {
+          machine1.shuffle();
+          machine2.shuffle();
+          machine3.shuffle();
 
           if (p_sound === "1") {
             audios[0].play();
           }
-  			});
 
-  			$("#slotMachineButtonStop").click(function() {
-  				machineYear.stop();
-  				machine1.stop();
-  				machine2.stop();
-  				machine3.stop();
-
-          if (p_sound === "1") {
-            audios[2].play();
-          }
-  			});
-
-        if (p_autoplay === "1") {
-          setInterval(function () {
-            machineYear.shuffle();
-            machine1.shuffle();
-            machine2.shuffle();
-            machine3.shuffle();
+          setTimeout(function () {
+            machine1.stop();
+            machine2.stop();
+            machine3.stop();
 
             if (p_sound === "1") {
-              audios[0].play();
+              audios[2].play();
             }
+          }, RUN_INTERVAL);
+        }, PLAY_INTERVAL);
+      }
 
-            setTimeout(function() {
-              machineYear.stop();
-              machine1.stop();
-              machine2.stop();
-              machine3.stop();
+      $("#resultLink").click(function () {
+        alert("Der Motto-Link wurde aktualisiert und kann jetzt geteilt werden");
 
-              if (p_sound === "1") {
-                audios[2].play();
-              }
-            }, RUN_INTERVAL);
-          }, PLAY_INTERVAL);
-        }
+        var baseUrl = getBaseUrl();
+        var params = "?slot1=" + machine1.active + "&slot2=" + machine2.active + "&slot3=" + machine3.active + "#year-anchor";
 
-  			$("#resultLink").click(function() {
-  				alert("Der Motto-Link wurde aktualisiert und kann jetzt geteilt werden");
-  			
-  				var baseUrl = getBaseUrl();
-  				var params = "?year=" + machineYear.active + "&slot1=" + machine1.active + "&slot2=" + machine2.active + "&slot3=" + machine3.active + "#year-anchor";
+        $("#resultLink").attr("href", baseUrl + params);
+      });
 
-  				$("#resultLink").attr("href", baseUrl + params);
-  			});
-  			
-  			$("#infoButton").click(function() {
-  				alert("Halts Mull un pfüff!");
-  				
-  				var baseUrl = getBaseUrl();
-  				var params = "?year=" + machineYear.active + "&slot1=" + machine1.active + "&slot2=" + machine2.active + "&slot3=" + machine3.active + "#year-anchor";
-  				
-  				$("#infoButton").attr("href", baseUrl + params);
-  			});
-  		});
-	  </script>
-	  <script>
-  	    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-            })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+      $("#infoButton").click(function () {
+        alert("Halts Mull un pfüff!");
 
-            ga('create', 'UA-59302336-1', 'auto');
-            ga('send', 'pageview');
+        var baseUrl = getBaseUrl();
+        var params = "?slot1=" + machine1.active + "&slot2=" + machine2.active + "&slot3=" + machine3.active + "#year-anchor";
 
-    </script>
-    <div style="margin-top: 12px; color: #ffffff;">
-      <p class="">© EAG Wasungen</p>
-    </div>
-  </div>
+        $("#infoButton").attr("href", baseUrl + params);
+      });
+    });
+  </script>
+  <script>
+    (function (i, s, o, g, r, a, m) {
+      i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+        (i[r].q = i[r].q || []).push(arguments)
+      }, i[r].l = 1 * new Date(); a = s.createElement(o),
+        m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+    ga('create', 'UA-59302336-1', 'auto');
+    ga('send', 'pageview');
+  </script>
 </body>
 </html>
