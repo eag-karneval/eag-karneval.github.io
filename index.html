@@ -10,6 +10,12 @@
 </head>
 
 <body>
+  <div class="loading-overlay" id="loadingOverlay" aria-live="polite" aria-busy="true">
+    <div class="loading-card">
+      <span class="spinner"></span>
+      <p class="loading-text">Bilder werden geladen …</p>
+    </div>
+  </div>
   <div class="page">
     <header class="hero">
       <div>
@@ -250,7 +256,34 @@
     var PLAY_INTERVAL = 13500;
     var RUN_INTERVAL = 5000;
 
-    $(window).on('load', function () {
+    function waitForSlotImages() {
+      var images = document.querySelectorAll('.slot-machine img');
+      if (!images.length) {
+        return Promise.resolve();
+      }
+
+      return new Promise(function (resolve) {
+        var remaining = images.length;
+
+        function done() {
+          remaining -= 1;
+          if (remaining <= 0) {
+            resolve();
+          }
+        }
+
+        images.forEach(function (img) {
+          if (img.complete && img.naturalWidth !== 0) {
+            done();
+            return;
+          }
+          img.addEventListener('load', done, { once: true });
+          img.addEventListener('error', done, { once: true });
+        });
+      });
+    }
+
+    function initSlotMachine() {
       var audios = [
         { id: 'roll' }, // Played on roll tart
         { id: 'slot' }, // Played when reel stops
@@ -350,6 +383,19 @@
         var params = "?slot1=" + machine1.active + "&slot2=" + machine2.active + "&slot3=" + machine3.active + "#year-anchor";
 
         $("#infoButton").attr("href", baseUrl + params);
+      });
+    }
+
+    $(function () {
+      var overlay = document.getElementById('loadingOverlay');
+      waitForSlotImages().then(function () {
+        if (overlay) {
+          overlay.classList.add('loading-overlay--hidden');
+          setTimeout(function () {
+            overlay.remove();
+          }, 300);
+        }
+        initSlotMachine();
       });
     });
   </script>
