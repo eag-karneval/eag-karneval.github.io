@@ -28,7 +28,7 @@
         <span class="status-pill active">🍺</span>
         <div class="status-user">
           <span class="status-name">EAG</span>
-          <a class="btn btn-ghost btn-compact" href="#slot-machine">Motto-Lotto</a>
+          <a class="btn btn-ghost btn-compact" href="#slot-machine">Zum Motto-Lotto</a>
         </div>
       </div>
     </header>
@@ -116,9 +116,12 @@
       return baseUrl;
     }
 
+    var audioContext = null;
+
     function _initWebAudio(AudioContext, format, audios, callback) {
       // See more details in http://www.html5rocks.com/en/tutorials/webaudio/intro/
       var context = new AudioContext();
+      audioContext = context;
 
       function _preload(asset) {
         var request = new XMLHttpRequest();
@@ -232,6 +235,15 @@
       }
     }
 
+    function ensureAudioContextResumed() {
+      if (!audioContext || typeof audioContext.resume !== 'function') {
+        return;
+      }
+      if (audioContext.state === 'suspended') {
+        audioContext.resume();
+      }
+    }
+
     function getRandomSlotIndex(elementsInSlot, randomValue) {
       var result = randomValue * elementsInSlot;
       result = Math.round(result) - 1;
@@ -332,6 +344,7 @@
       });
 
       $("#slotMachineButtonShuffle").click(function () {
+        ensureAudioContextResumed();
         machine1.shuffle();
         machine2.shuffle();
         machine3.shuffle();
@@ -342,6 +355,7 @@
       });
 
       $("#slotMachineButtonStop").click(function () {
+        ensureAudioContextResumed();
         machine1.stop();
         machine2.stop();
         machine3.stop();
