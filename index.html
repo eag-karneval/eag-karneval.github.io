@@ -117,6 +117,8 @@
     }
 
     var audioContext = null;
+    var audioAssets = null;
+    var audioInitialized = false;
 
     function _initWebAudio(AudioContext, format, audios, callback) {
       // See more details in http://www.html5rocks.com/en/tutorials/webaudio/intro/
@@ -235,12 +237,33 @@
       }
     }
 
-    function ensureAudioContextResumed() {
-      if (!audioContext || typeof audioContext.resume !== 'function') {
+    function initAudioOnce() {
+      if (!audioAssets || audioInitialized) {
         return;
       }
-      if (audioContext.state === 'suspended') {
-        audioContext.resume();
+      initAudio(audioAssets, function () {
+        audioInitialized = true;
+      });
+    }
+
+    function ensureAudioReady() {
+      if (audioContext && typeof audioContext.resume === 'function') {
+        if (audioContext.state === 'suspended' || audioContext.state === 'interrupted') {
+          audioContext.resume().catch(function () {
+            audioContext = null;
+            audioInitialized = false;
+            initAudioOnce();
+          });
+        } else if (audioContext.state === 'closed') {
+          audioContext = null;
+          audioInitialized = false;
+          initAudioOnce();
+        }
+        return;
+      }
+
+      if (!audioInitialized) {
+        initAudioOnce();
       }
     }
 
@@ -298,9 +321,9 @@
         { id: 'nowin' }  // Played on loss
       ];
 
-      initAudio(audios, function () {
-        // currently nothing to do
-      });
+      audioAssets = audios;
+      audioInitialized = false;
+      initAudioOnce();
 
       var elementsSlot1 = $("#textMachine1").children().length;
       var elementsSlot2 = $("#textMachine2").children().length;
@@ -344,7 +367,7 @@
       });
 
       $("#slotMachineButtonShuffle").click(function () {
-        ensureAudioContextResumed();
+        ensureAudioReady();
         machine1.shuffle();
         machine2.shuffle();
         machine3.shuffle();
@@ -355,7 +378,7 @@
       });
 
       $("#slotMachineButtonStop").click(function () {
-        ensureAudioContextResumed();
+        ensureAudioReady();
         machine1.stop();
         machine2.stop();
         machine3.stop();
@@ -417,6 +440,12 @@
         }
         initSlotMachine();
       });
+    });
+
+    document.addEventListener('visibilitychange', function () {
+      if (document.hidden) {
+        audioInitialized = false;
+      }
     });
   </script>
   <script>
