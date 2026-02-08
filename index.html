@@ -239,13 +239,8 @@
     }
 
     var p_slot1 = getUrlParameter("slot1");
-    var active_slot1 = p_slot1 ? p_slot1 : 1;
-
     var p_slot2 = getUrlParameter("slot2");
-      var active_slot2 = p_slot2 ? p_slot2 : 1;
-
     var p_slot3 = getUrlParameter("slot3");
-    var active_slot3 = p_slot3 ? p_slot3 : 1;
 
     var p_autoplay = getUrlParameter("autoplay");
     p_autoplay = p_autoplay ? p_autoplay : "0";
@@ -295,11 +290,24 @@
         // currently nothing to do
       });
 
+      var elementsSlot1 = $("#textMachine1").children().length;
+      var elementsSlot2 = $("#textMachine2").children().length;
+      var elementsSlot3 = $("#textMachine3").children().length;
+
+      var active_slot1 = Number.isFinite(parseInt(p_slot1, 10))
+        ? parseInt(p_slot1, 10)
+        : Math.floor(Math.random() * elementsSlot1);
+      var active_slot2 = Number.isFinite(parseInt(p_slot2, 10))
+        ? parseInt(p_slot2, 10)
+        : Math.floor(Math.random() * elementsSlot2);
+      var active_slot3 = Number.isFinite(parseInt(p_slot3, 10))
+        ? parseInt(p_slot3, 10)
+        : Math.floor(Math.random() * elementsSlot3);
+
       var machine1 = $("#textMachine1").slotMachine({
         active: active_slot1,
         delay: 800,
         randomize: function (activeElementIndex) {
-          var elementsSlot1 = $("#textMachine1").children().length;
           var result = getRandomSlotIndex(elementsSlot1, Math.random());
           return result;
         }
@@ -309,7 +317,6 @@
         active: active_slot2,
         delay: 1100,
         randomize: function (activeElementIndex) {
-          var elementsSlot2 = $("#textMachine2").children().length;
           var result = getRandomSlotIndex(elementsSlot2, Math.random());
           return result;
         }
@@ -319,7 +326,6 @@
         active: active_slot3,
         delay: 1400,
         randomize: function (activeElementIndex) {
-          var elementsSlot3 = $("#textMachine3").children().length;
           var result = getRandomSlotIndex(elementsSlot3, Math.random());
           return result;
         }
