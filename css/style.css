@@ -811,4 +811,8 @@ input:focus {
   .slot-reel {
     max-height: 120px;
   }
+
+  .slot-actions {
+    justify-content: center;
+  }
 }
