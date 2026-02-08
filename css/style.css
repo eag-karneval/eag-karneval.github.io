@@ -655,10 +655,11 @@ input:focus {
 
   .hero {
     flex-direction: column;
+    gap: 20px;
   }
 
   .subhead {
-    margin-bottom: 110px;
+    margin-bottom: 40px;
   }
 
   .status {
