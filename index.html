@@ -285,6 +285,7 @@
 
     var PLAY_INTERVAL = 13500;
     var RUN_INTERVAL = 5000;
+    var MANUAL_RUN_MAX_MS = 7500;
 
     function waitForSlotImages() {
       var images = document.querySelectorAll('.slot-machine img');
@@ -366,11 +367,31 @@
         }
       });
 
+      var manualStopTimer = null;
+
+      function stopMachines(playSound) {
+        machine1.stop();
+        machine2.stop();
+        machine3.stop();
+
+        if (playSound && p_sound === "1") {
+          audios[2].play();
+        }
+      }
+
       $("#slotMachineButtonShuffle").click(function () {
         ensureAudioReady();
+        if (manualStopTimer) {
+          clearTimeout(manualStopTimer);
+        }
         machine1.shuffle();
         machine2.shuffle();
         machine3.shuffle();
+
+        manualStopTimer = setTimeout(function () {
+          stopMachines(true);
+          manualStopTimer = null;
+        }, MANUAL_RUN_MAX_MS);
 
         if (p_sound === "1") {
           audios[0].play();
@@ -379,13 +400,11 @@
 
       $("#slotMachineButtonStop").click(function () {
         ensureAudioReady();
-        machine1.stop();
-        machine2.stop();
-        machine3.stop();
-
-        if (p_sound === "1") {
-          audios[2].play();
+        if (manualStopTimer) {
+          clearTimeout(manualStopTimer);
+          manualStopTimer = null;
         }
+        stopMachines(true);
       });
 
       if (p_autoplay === "1") {
@@ -399,13 +418,7 @@
           }
 
           setTimeout(function () {
-            machine1.stop();
-            machine2.stop();
-            machine3.stop();
-
-            if (p_sound === "1") {
-              audios[2].play();
-            }
+            stopMachines(true);
           }, RUN_INTERVAL);
         }, PLAY_INTERVAL);
       }
