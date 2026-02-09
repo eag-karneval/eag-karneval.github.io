@@ -368,16 +368,25 @@
       });
 
       var manualStopTimer = null;
+      var isSpinning = false;
+
+      function setStopEnabled(enabled) {
+        $("#slotMachineButtonStop").prop("disabled", !enabled);
+      }
 
       function stopMachines(playSound) {
         machine1.stop();
         machine2.stop();
         machine3.stop();
+        isSpinning = false;
+        setStopEnabled(false);
 
         if (playSound && p_sound === "1") {
           audios[2].play();
         }
       }
+
+      setStopEnabled(false);
 
       $("#slotMachineButtonShuffle").click(function () {
         ensureAudioReady();
@@ -387,6 +396,8 @@
         machine1.shuffle();
         machine2.shuffle();
         machine3.shuffle();
+        isSpinning = true;
+        setStopEnabled(true);
 
         manualStopTimer = setTimeout(function () {
           stopMachines(true);
@@ -409,6 +420,10 @@
 
       if (p_autoplay === "1") {
         setInterval(function () {
+          if (!isSpinning) {
+            setStopEnabled(true);
+            isSpinning = true;
+          }
           machine1.shuffle();
           machine2.shuffle();
           machine3.shuffle();
